@@ -4,5 +4,8 @@
         "band": "Interpol",
         "instagram": "interpol",
         "venue": "The Factory, Chesterfield, MO"
-    }
+    },
+  { "date": "2026-05-17", "band": "Purity Ring", "venue": "Delmar Hall" },
+  { "date": "2026-05-12", "band": "Built to Spill", "venue": "Delmar Hall" },
+  { "date": "2026-04-29", "band": "David Byrne", "venue": "Stifel Theatre" }
 ]
