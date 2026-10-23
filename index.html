@@ -1,570 +1,209 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Cole Orton is an engineer in St. Louis who likes live music, vinyl, food, St. Louis sports, Jeeps, Apple gear and podcasts.">
-    <meta property="og:title" content="Cole Orton">
-    <meta property="og:description" content="Engineer in St. Louis. Live music, vinyl, food, sports, Jeeps, Apple and podcasts.">
-    <meta property="og:url" content="https://coleorton.com">
-    <meta name="theme-color" content="#1d3fd0">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d3fd0'/%3E%3Ctext x='4' y='25' font-family='Arial Black,Arial' font-weight='900' font-size='22' fill='white'%3EC%3C/text%3E%3Crect x='22' y='20' width='5' height='5' fill='%23ffd23f'/%3E%3C/svg%3E">
-    <title>Cole Orton</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,700;125,900&display=swap">
-    <style>
-    /* Layout: a cobalt opener with an enormous expanded wordmark, then an inverted white band of interests, each set as a giant label beside its notes */
-    :root {
-        --field: #1d3fd0;
-        --ink: #ffffff;
-        --soft: rgba(255, 255, 255, .74);
-        --rule: rgba(255, 255, 255, .3);
-        --hot: #ffd23f;
-        --paper: #ffffff;
-        --cobalt-ink: #1d3fd0;
-        --body-ink: #15183a;
-        --paper-soft: #5a5f86;
-        --paper-rule: #d6dbf3;
-        --face: "Archivo", "Arial Black", Arial, sans-serif;
-        color-scheme: dark;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cole Orton is an engineer in St. Louis who likes live music, vinyl, food, St. Louis sports, Jeeps, Apple gear and podcasts.">
+<meta property="og:title" content="Cole Orton">
+<meta property="og:description" content="Engineer in St. Louis. Live music, vinyl, food, sports, Jeeps, Apple and podcasts.">
+<meta property="og:url" content="https://coleorton.com">
+<meta name="theme-color" content="#1d3fd0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d3fd0'/%3E%3Ctext x='4' y='25' font-family='Arial Black,Arial' font-weight='900' font-size='22' fill='white'%3EC%3C/text%3E%3Crect x='22' y='20' width='5' height='5' fill='%23ffd23f'/%3E%3C/svg%3E">
+<title>Cole Orton</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,700;125,900&display=swap">
+<style>
+/* Layout: a cobalt opener with an enormous expanded wordmark, then an inverted white band of interests, each set as a giant label beside its notes */
+:root {
+  --field: #1d3fd0; --ink: #ffffff; --soft: rgba(255,255,255,.74); --rule: rgba(255,255,255,.3); --hot: #ffd23f;
+  --paper: #ffffff; --cobalt-ink: #1d3fd0; --body-ink: #15183a; --paper-soft: #5a5f86; --paper-rule: #d6dbf3;
+  --face: "Archivo", "Arial Black", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--field); color: var(--ink); font: 400 17px/1.55 var(--face); font-stretch: 100%; }
+.inner { max-width: 1200px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+a:focus-visible { outline: 3px solid var(--hot); outline-offset: 3px; }
 
-    * {
-        box-sizing: border-box;
-    }
+/* Opener */
+.hero .inner { min-height: 94vh; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; padding-block: 32px 40px; }
+.meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-weight: 500; font-stretch: 125%; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+h1 { margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(64px, 17vw, 230px); line-height: .82; letter-spacing: -.045em; text-transform: uppercase; overflow-wrap: anywhere; }
+h1 span { color: var(--hot); }
+.bio { font-size: clamp(19px, 2.4vw, 26px); line-height: 1.4; max-width: 32ch; margin: 28px 0 0; font-stretch: 90%; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 2px solid var(--ink); }
+.facts div { padding: 16px 20px 0 0; min-width: 0; }
+.facts b { display: block; font-weight: 900; font-stretch: 125%; font-size: clamp(28px, 4vw, 44px); line-height: 1; letter-spacing: -.02em; }
+.facts b a { color: inherit; text-decoration-color: var(--hot); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.facts span { color: var(--soft); font-size: 14px; }
+nav { display: flex; flex-wrap: wrap; gap: 10px 28px; }
+nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-stretch: 125%; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; border-bottom: 2px solid var(--rule); padding-bottom: 3px; }
+nav a:hover { border-color: var(--hot); }
+nav a.jump { color: var(--hot); border-color: var(--hot); }
 
-    body {
-        margin: 0;
-        background: var(--field);
-        color: var(--ink);
-        font: 400 17px/1.55 var(--face);
-        font-stretch: 100%;
-    }
+/* Interests band */
+.off { background: var(--paper); color: var(--body-ink); }
+.off .inner { padding-block: 72px 80px; }
+.off h2 { margin: 0 0 40px; font-weight: 500; font-stretch: 125%; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--paper-soft); }
+.likes { list-style: none; margin: 0; padding: 0; }
+.likes li { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px 48px; align-items: start; padding-block: 28px; border-top: 2px solid var(--cobalt-ink); }
+.likes li:last-child { border-bottom: 2px solid var(--cobalt-ink); }
+.likes h3 { margin: 0; color: var(--cobalt-ink); font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -.035em; line-height: .88; font-size: clamp(44px, 8.5vw, 112px); overflow-wrap: anywhere; }
+.likes p { margin: 0 0 12px; max-width: 46ch; font-size: 17px; }
+.likes p:last-child { margin-bottom: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 14px 0 0; }
+.tags li { all: unset; font-weight: 700; font-stretch: 110%; font-size: 13px; padding: 6px 10px; border: 2px solid var(--body-ink); border-radius: 99px; }
 
-    .inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-left: max(20px, env(safe-area-inset-left, 0px));
-        padding-right: max(20px, env(safe-area-inset-right, 0px));
-    }
+.tag-link { color: inherit; text-decoration: none; }
+.tags li:has(.tag-link):hover { background: var(--cobalt-ink); border-color: var(--cobalt-ink); color: var(--paper); }
+.seen { margin-top: 26px; }
+.seen h4 { margin: 0 0 8px; font-weight: 500; font-stretch: 125%; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--paper-soft); }
+.seen ol { list-style: none; margin: 0; padding: 0; }
+.seen li { all: unset; display: grid; grid-template-columns: 4.2rem minmax(0,1fr); gap: 12px; padding-block: 9px; border-top: 1px solid var(--paper-rule); }
+.seen time { font-weight: 700; font-stretch: 110%; font-size: 13px; color: var(--cobalt-ink); font-variant-numeric: tabular-nums; text-transform: uppercase; padding-top: 2px; }
+.seen .band { font-weight: 700; font-size: 16px; }
+.seen .band a { color: var(--body-ink); text-decoration-color: var(--cobalt-ink); text-underline-offset: 3px; }
+.seen .venue { display: block; color: var(--paper-soft); font-size: 14px; }
+.seen .ex { font-weight: 700; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--cobalt-ink); border: 1px solid var(--cobalt-ink); border-radius: 3px; padding: 1px 5px; margin-left: 6px; vertical-align: 2px; }
 
-    a:focus-visible {
-        outline: 3px solid var(--hot);
-        outline-offset: 3px;
-    }/* Opener */
-    .hero .inner {
-        min-height: 94vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 48px;
-        padding-block: 32px 40px;
-    }
+footer { background: var(--field); color: var(--soft); }
+footer .inner { padding-block: 28px 36px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-weight: 500; font-stretch: 125%; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+footer a { color: var(--ink); }
 
-    .meta {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        font-weight: 500;
-        font-stretch: 125%;
-        font-size: 12px;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: var(--soft);
-    }
-
-    h1 {
-        margin: 0;
-        font-weight: 900;
-        font-stretch: 125%;
-        font-size: clamp(64px, 17vw, 230px);
-        line-height: .82;
-        letter-spacing: -.045em;
-        text-transform: uppercase;
-        overflow-wrap: anywhere;
-    }
-
-    h1 span {
-        color: var(--hot);
-    }
-
-    .bio {
-        font-size: clamp(19px, 2.4vw, 26px);
-        line-height: 1.4;
-        max-width: 32ch;
-        margin: 28px 0 0;
-        font-stretch: 90%;
-    }
-
-    .facts {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        border-top: 2px solid var(--ink);
-    }
-
-    .facts div {
-        padding: 16px 20px 0 0;
-        min-width: 0;
-    }
-
-    .facts b {
-        display: block;
-        font-weight: 900;
-        font-stretch: 125%;
-        font-size: clamp(28px, 4vw, 44px);
-        line-height: 1;
-        letter-spacing: -.02em;
-    }
-
-    .facts b a {
-        color: inherit;
-        text-decoration-color: var(--hot);
-        text-decoration-thickness: 3px;
-        text-underline-offset: 5px;
-    }
-
-    .facts span {
-        color: var(--soft);
-        font-size: 14px;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 28px;
-    }
-
-    nav a {
-        color: var(--ink);
-        text-decoration: none;
-        font-weight: 500;
-        font-stretch: 125%;
-        text-transform: uppercase;
-        letter-spacing: .06em;
-        font-size: 14px;
-        border-bottom: 2px solid var(--rule);
-        padding-bottom: 3px;
-    }
-
-    nav a:hover {
-        border-color: var(--hot);
-    }
-
-    nav a.jump {
-        color: var(--hot);
-        border-color: var(--hot);
-    }/* Interests band */
-    .off {
-        background: var(--paper);
-        color: var(--body-ink);
-    }
-
-    .off .inner {
-        padding-block: 72px 80px;
-    }
-
-    .off h2 {
-        margin: 0 0 40px;
-        font-weight: 500;
-        font-stretch: 125%;
-        font-size: 13px;
-        letter-spacing: .16em;
-        text-transform: uppercase;
-        color: var(--paper-soft);
-    }
-
-    .likes {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .likes > li {
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-        gap: 16px 48px;
-        align-items: start;
-        padding-block: 28px;
-        border-top: 2px solid var(--cobalt-ink);
-    }
-
-    .likes > li:last-child {
-        border-bottom: 2px solid var(--cobalt-ink);
-    }
-
-    .likes h3 {
-        margin: 0;
-        color: var(--cobalt-ink);
-        font-weight: 900;
-        font-stretch: 125%;
-        text-transform: uppercase;
-        letter-spacing: -.035em;
-        line-height: .88;
-        font-size: clamp(44px, 8.5vw, 112px);
-        overflow-wrap: anywhere;
-    }
-
-    .likes p {
-        margin: 0 0 12px;
-        max-width: 46ch;
-        font-size: 17px;
-    }
-
-    .likes p:last-child {
-        margin-bottom: 0;
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        list-style: none;
-        padding: 0;
-        margin: 14px 0 0;
-    }
-
-    .tags li {
-        all: unset;
-        font-weight: 700;
-        font-stretch: 110%;
-        font-size: 13px;
-        padding: 6px 10px;
-        border: 2px solid var(--body-ink);
-        border-radius: 99px;
-    }
-
-    .tag-link {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .tags li:has(.tag-link):hover {
-        background: var(--cobalt-ink);
-        border-color: var(--cobalt-ink);
-        color: var(--paper);
-    }
-
-    .seen {
-        margin-top: 26px;
-    }
-
-    .seen h4 {
-        margin: 0 0 8px;
-        font-weight: 500;
-        font-stretch: 125%;
-        font-size: 12px;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: var(--paper-soft);
-    }
-
-    .seen ol {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .seen li {
-        all: unset;
-        display: grid;
-        grid-template-columns: 4.2rem minmax(0, 1fr);
-        gap: 12px;
-        padding-block: 9px;
-        border-top: 1px solid var(--paper-rule);
-    }
-
-    .seen time {
-        font-weight: 700;
-        font-stretch: 110%;
-        font-size: 13px;
-        color: var(--cobalt-ink);
-        font-variant-numeric: tabular-nums;
-        text-transform: uppercase;
-        padding-top: 2px;
-    }
-
-    .seen .band {
-        font-weight: 700;
-        font-size: 16px;
-    }
-
-    .seen .band a {
-        color: var(--body-ink);
-        text-decoration-color: var(--cobalt-ink);
-        text-underline-offset: 3px;
-    }
-
-    .seen .venue {
-        display: block;
-        color: var(--paper-soft);
-        font-size: 14px;
-    }
-
-    .seen .ex {
-        font-weight: 700;
-        font-size: 11px;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        color: var(--cobalt-ink);
-        border: 1px solid var(--cobalt-ink);
-        border-radius: 3px;
-        padding: 1px 5px;
-        margin-left: 6px;
-        vertical-align: 2px;
-    }
-
-    footer {
-        background: var(--field);
-        color: var(--soft);
-    }
-
-    footer .inner {
-        padding-block: 28px 36px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 8px;
-        font-weight: 500;
-        font-stretch: 125%;
-        font-size: 12px;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-    }
-
-    footer a {
-        color: var(--ink);
-    }
-
-    @media (max-width: 700px) {
-        .hero .inner {
-            min-height: 0;
-            padding-block: 28px 36px;
-        }
-
-        .facts {
-            grid-template-columns: 1fr;
-        }
-
-        .facts div {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--rule);
-        }
-
-        .likes > li {
-            grid-template-columns: 1fr;
-            padding-block: 22px;
-        }
-
-        .off .inner {
-            padding-block: 52px 56px;
-        }
-    }
-    </style>
+@media (max-width: 700px) {
+  .hero .inner { min-height: 0; padding-block: 28px 36px; }
+  .facts { grid-template-columns: 1fr; }
+  .facts div { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .likes li { grid-template-columns: 1fr; padding-block: 22px; }
+  .off .inner { padding-block: 52px 56px; }
+}
+</style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="inner">
-            <div class="meta">
-                <span>St. Louis, MO</span>
-                <span>Engineer · music · grill · Jeep</span>
-            </div>
-            <div>
-                <h1>
-                    Cole
-                    <br>
-                    Orton
-                    <span>.</span>
-                </h1>
-                <p class="bio">I keep big systems running and teach AI agents to help. Senior BizOps Engineer at Mastercard. Seventeen years at AT&amp;T before that.</p>
-            </div>
-            <div class="facts">
-                <div>
-                    <b>20+</b>
-                    <span>years engineering</span>
-                </div>
-                <div>
-                    <b>17</b>
-                    <span>years at AT&amp;T, up to Principal</span>
-                </div>
-                <div>
-                    <b>
-                        <a href="https://atptitles.fm">ATP Titles</a>
-                    </b>
-                    <span>current side project</span>
-                </div>
-            </div>
-            <nav>
-                <a class="jump" href="#off-the-clock">Off the clock ↓</a>
-                <a href="https://mastodon.social/@thecoleorton" rel="me">Mastodon</a>
-                <a href="https://github.com/thecoleorton">GitHub</a>
-                <a href="https://atptitles.fm">atptitles.fm</a>
-                <a href="https://ko-fi.com/coleorton">Ko-fi</a>
-            </nav>
-        </div>
-    </header>
+<header class="hero">
+  <div class="inner">
+    <div class="meta"><span>St. Louis, MO</span><span>Engineer · music · grill · Jeep</span></div>
+    <div>
+      <h1>Cole<br>Orton<span>.</span></h1>
+      <p class="bio">I keep big systems running and teach AI agents to help. Senior BizOps Engineer at Mastercard. Seventeen years at AT&amp;T before that.</p>
+    </div>
+    <div class="facts">
+      <div><b>20+</b><span>years engineering</span></div>
+      <div><b>17</b><span>years at AT&amp;T, up to Principal</span></div>
+      <div><b><a href="https://atptitles.fm">ATP Titles</a></b><span>current side project</span></div>
+    </div>
+    <nav>
+      <a class="jump" href="#off-the-clock">Off the clock ↓</a>
+      <a href="https://mastodon.social/@thecoleorton" rel="me">Mastodon</a>
+      <a href="https://github.com/thecoleorton">GitHub</a>
+      <a href="https://atptitles.fm">atptitles.fm</a>
+      <a href="https://ko-fi.com/coleorton">Ko-fi</a>
+    </nav>
+  </div>
+</header>
 
-    <main class="off" id="off-the-clock">
-        <div class="inner">
-            <h2>Off the clock</h2>
-            <ul class="likes">
-                <li>
-                    <h3>
-                        Live
-                        <br>
-                        music
-                    </h3>
-                    <div>
-                        <p>If a band I like comes through St. Louis, I'm probably there. Indie rock and alternative mostly, with a catalog that goes deep. I played guitar for a while too.</p>
-                        <ul class="tags">
-                            <li>Built to Spill</li>
-                            <li>The National</li>
-                            <li>Bon Iver</li>
-                            <li>Phoebe Bridgers</li>
-                            <li>Khruangbin</li>
-                        </ul>
-                        <div class="seen" id="seen" hidden>
-                            <h4>Recently seen</h4>
-                            <ol id="seen-list"></ol>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <h3>Vinyl</h3>
-                    <div>
-                        <p>I collect records and concert posters, so a good show usually means something new for the shelf or the wall.</p>
-                    </div>
-                </li>
-                <li>
-                    <h3>Food</h3>
-                    <div>
-                        <p>Low and slow on the Traeger most weekends. I'm one good excuse away from buying a pizza oven.</p>
-                        <p>Every morning starts with espresso, and I'm always dialing in the recipe: grind size, dose, yield, time.</p>
-                    </div>
-                </li>
-                <li>
-                    <h3>Sports</h3>
-                    <div>
-                        <p>St. Louis sports all year: Cardinals in the summer, Blues in the winter, CITY SC in between, and Mizzou every fall.</p>
-                        <ul class="tags">
-                            <li>Cardinals</li>
-                            <li>Blues</li>
-                            <li>Mizzou</li>
-                            <li>St. Louis CITY SC</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <h3>Jeeps</h3>
-                    <div>
-                        <p>Top off whenever Missouri weather allows. A Jeep is a vehicle and a hobby at the same time.</p>
-                    </div>
-                </li>
-                <li>
-                    <h3>Apple</h3>
-                    <div>
-                        <p>I've shipped iOS apps, my house runs on HomeKit and Homebridge, and a Mac mini in the basement transcribes podcasts all day.</p>
-                    </div>
-                </li>
-                <li>
-                    <h3>Pod&shy;casts</h3>
-                    <div>
-                        <p>
-                            Podcasts fill every drive and every long cook. ATP is the one I never miss, enough that I built 
-                            <a href="https://atptitles.fm" style="color:var(--cobalt-ink)">atptitles.fm</a>
-                             to find where each episode title came from. On Relay, it's Connected, Upgrade and Reconcilable Differences.
-                        </p>
-                        <ul class="tags">
-                            <li>
-                                <a class="tag-link" href="https://atp.fm">ATP</a>
-                            </li>
-                            <li>
-                                <a class="tag-link" href="https://www.relay.fm/connected">Connected</a>
-                            </li>
-                            <li>
-                                <a class="tag-link" href="https://www.relay.fm/upgrade">Upgrade</a>
-                            </li>
-                            <li>
-                                <a class="tag-link" href="https://www.relay.fm/rd">Reconcilable Differences</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+<main class="off" id="off-the-clock">
+  <div class="inner">
+    <h2>Off the clock</h2>
+    <ul class="likes">
+      <li>
+        <h3>Live<br>music</h3>
+        <div>
+          <p>If a band I like comes through St. Louis, I'm probably there. Indie rock and alternative mostly, with a catalog that goes deep. I played guitar for a while too.</p>
+          <ul class="tags">
+            <li>Built to Spill</li><li>The National</li><li>Bon Iver</li><li>Phoebe Bridgers</li><li>Khruangbin</li>
+          </ul>
+          <div class="seen" id="seen" hidden>
+            <h4>Recently seen</h4>
+            <ol id="seen-list"></ol>
+          </div>
         </div>
-    </main>
-
-    <footer>
-        <div class="inner">
-            <span>© 2026 Cole Orton</span>
-            <span>Made in St. Louis</span>
+      </li>
+      <li>
+        <h3>Vinyl</h3>
+        <div>
+          <p>I collect records and concert posters, so a good show usually means something new for the shelf or the wall.</p>
         </div>
-    </footer>
+      </li>
+      <li>
+        <h3>Food</h3>
+        <div>
+          <p>Low and slow on the Traeger most weekends. I'm one good excuse away from buying a pizza oven.</p>
+          <p>Every morning starts with espresso, and I'm always dialing in the recipe: grind size, dose, yield, time.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Sports</h3>
+        <div>
+          <p>St. Louis sports all year: Cardinals in the summer, Blues in the winter, CITY SC in between, and Mizzou every fall.</p>
+          <ul class="tags">
+            <li>Cardinals</li><li>Blues</li><li>Mizzou</li><li>St. Louis CITY SC</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <h3>Jeeps</h3>
+        <div>
+          <p>Top off whenever Missouri weather allows. A Jeep is a vehicle and a hobby at the same time.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Apple</h3>
+        <div>
+          <p>I've shipped iOS apps, my house runs on HomeKit and Homebridge, and a Mac mini in the basement transcribes a podcast once a week.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Pod&shy;casts</h3>
+        <div>
+          <p>Podcasts fill every drive and every long cook. ATP is the one I never miss, enough that I built <a href="https://atptitles.fm" style="color:var(--cobalt-ink)">atptitles.fm</a> to find where each episode title came from. On Relay, it's Connected, Upgrade and Reconcilable Differences.</p>
+          <ul class="tags">
+            <li><a class="tag-link" href="https://atp.fm">ATP</a></li><li><a class="tag-link" href="https://www.relay.fm/connected">Connected</a></li><li><a class="tag-link" href="https://www.relay.fm/upgrade">Upgrade</a></li><li><a class="tag-link" href="https://www.relay.fm/rd">Reconcilable Differences</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
 
-    <script>
-    // Recently seen: reads shows.json next to this page. Stays hidden if the file is missing or empty.
-    (function() {
-        var MAX = 8;
-        var fmt = new Intl.DateTimeFormat('en-US', {
-            month: 'short',
-            day: 'numeric',
-            timeZone: 'UTC'
-        });
-        function el(tag, cls, text) {
-            var e = document.createElement(tag);
-            if (cls)
-                e.className = cls;
-            if (text)
-                e.textContent = text;
-            return e;
-        }
-        fetch('shows.json', {
-            cache: 'no-store'
-        })
-        .then(function(r) {
-            return r.ok ? r.json() : [];
-        })
-        .then(function(shows) {
-            if (!Array.isArray(shows))
-                return;
-            shows = shows.filter(function(s) {
-                return s && s.band && s.date;
-            })
-            .sort(function(a, b) {
-                return b.date.localeCompare(a.date);
-            })
-            .slice(0, MAX);
-            if (!shows.length)
-                return;
-            var list = document.getElementById('seen-list');
-            shows.forEach(function(s) {
-                var li = el('li');
-                var d = new Date(s.date + 'T00:00:00Z');
-                var t = el('time', null, isNaN(d) ? s.date : fmt.format(d));
-                t.dateTime = s.date;
-                var info = el('div');
-                var band = el('span', 'band');
-                var href = s.post || (s.instagram ? 'https://www.instagram.com/' + s.instagram.replace(/^@/, '') + '/' : null);
-                if (href) {
-                    var a = el('a', null, s.band);
-                    a.href = href;
-                    band.appendChild(a);
-                } else {
-                    band.textContent = s.band;
-                }
-                if (s.example)
-                    band.appendChild(el('span', 'ex', 'Example'));
-                info.appendChild(band);
-                if (s.venue)
-                    info.appendChild(el('span', 'venue', s.venue));
-                li.appendChild(t);
-                li.appendChild(info);
-                list.appendChild(li);
-            });
-            document.getElementById('seen').hidden = false;
-        })
-        .catch(function() {});
-    })();
-    </script>
+<footer>
+  <div class="inner"><span>© 2026 Cole Orton</span><span>Made in St. Louis</span></div>
+</footer>
+
+<script>
+// Recently seen: reads shows.json next to this page. Stays hidden if the file is missing or empty.
+(function () {
+  var MAX = 8;
+  var fmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+  fetch('shows.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (shows) {
+      if (!Array.isArray(shows)) return;
+      shows = shows.filter(function (s) { return s && s.band && s.date; })
+                   .sort(function (a, b) { return b.date.localeCompare(a.date); })
+                   .slice(0, MAX);
+      if (!shows.length) return;
+      var list = document.getElementById('seen-list');
+      shows.forEach(function (s) {
+        var li = el('li');
+        var d = new Date(s.date + 'T00:00:00Z');
+        var t = el('time', null, isNaN(d) ? s.date : fmt.format(d));
+        t.dateTime = s.date;
+        var info = el('div');
+        var band = el('span', 'band');
+        var href = s.post || (s.instagram ? 'https://www.instagram.com/' + s.instagram.replace(/^@/, '') + '/' : null);
+        if (href) { var a = el('a', null, s.band); a.href = href; band.appendChild(a); } else { band.textContent = s.band; }
+        if (s.example) band.appendChild(el('span', 'ex', 'Example'));
+        info.appendChild(band);
+        if (s.venue) info.appendChild(el('span', 'venue', s.venue));
+        li.appendChild(t); li.appendChild(info);
+        list.appendChild(li);
+      });
+      document.getElementById('seen').hidden = false;
+    })
+    .catch(function () {});
+})();
+</script>
 </body>
 </html>
