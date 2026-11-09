@@ -65,6 +65,19 @@ nav a.jump { color: var(--hot); border-color: var(--hot); }
 .seen .venue { display: block; color: var(--paper-soft); font-size: 14px; }
 .seen .ex { font-weight: 700; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--cobalt-ink); border: 1px solid var(--cobalt-ink); border-radius: 3px; padding: 1px 5px; margin-left: 6px; vertical-align: 2px; }
 
+/* Pull quote band */
+.praise { background: var(--hot); color: var(--body-ink); }
+.praise .inner { padding-block: 56px 60px; }
+.praise figure { margin: 0; display: grid; gap: 22px; max-width: 980px; }
+.praise blockquote { margin: 0; font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -.03em; line-height: .95; font-size: clamp(34px, 6.4vw, 84px); text-wrap: balance; }
+.praise blockquote p { margin: 0; }
+.praise blockquote p::before { content: "\201C"; }
+.praise blockquote p::after { content: "\201D"; }
+.praise figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; font-size: 16px; border-top: 2px solid var(--body-ink); padding-top: 14px; }
+.praise figcaption b { font-weight: 700; font-stretch: 110%; }
+.praise figcaption a { color: var(--body-ink); text-underline-offset: 3px; }
+.praise figcaption a:focus-visible { outline-color: var(--cobalt-ink); }
+
 footer { background: var(--field); color: var(--soft); }
 footer .inner { padding-block: 28px 36px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-weight: 500; font-stretch: 125%; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
 footer a { color: var(--ink); }
@@ -101,6 +114,20 @@ footer a { color: var(--ink); }
     </nav>
   </div>
 </header>
+
+<section class="praise" aria-label="What people say about ATP Titles">
+  <div class="inner">
+    <figure>
+      <blockquote cite="https://atp.fm/716">
+        <p>This site by Cole Orton is very impressive and fun and cool.</p>
+      </blockquote>
+      <figcaption>
+        <b>John Siracusa</b>
+        <span>on <a href="https://atptitles.fm">atptitles.fm</a>, <a href="https://atp.fm/716">Accidental Tech Podcast #716</a></span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
 
 <main class="off" id="off-the-clock">
   <div class="inner">
