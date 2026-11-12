@@ -45,8 +45,8 @@ nav a.jump { color: var(--hot); border-color: var(--hot); }
 .off .inner { padding-block: 72px 80px; }
 .off h2 { margin: 0 0 40px; font-weight: 500; font-stretch: 125%; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--paper-soft); }
 .likes { list-style: none; margin: 0; padding: 0; }
-.likes li { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px 48px; align-items: start; padding-block: 28px; border-top: 2px solid var(--cobalt-ink); }
-.likes li:last-child { border-bottom: 2px solid var(--cobalt-ink); }
+.likes > li { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px 48px; align-items: start; padding-block: 28px; border-top: 2px solid var(--cobalt-ink); }
+.likes > li:last-child { border-bottom: 2px solid var(--cobalt-ink); }
 .likes h3 { margin: 0; color: var(--cobalt-ink); font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -.035em; line-height: .88; font-size: clamp(44px, 8.5vw, 112px); overflow-wrap: anywhere; }
 .likes p { margin: 0 0 12px; max-width: 46ch; font-size: 17px; }
 .likes p:last-child { margin-bottom: 0; }
@@ -86,7 +86,7 @@ footer a { color: var(--ink); }
   .hero .inner { min-height: 0; padding-block: 28px 36px; }
   .facts { grid-template-columns: 1fr; }
   .facts div { padding: 14px 0; border-bottom: 1px solid var(--rule); }
-  .likes li { grid-template-columns: 1fr; padding-block: 22px; }
+  .likes > li { grid-template-columns: 1fr; padding-block: 22px; }
   .off .inner { padding-block: 52px 56px; }
 }
 </style>
